@@ -1,9 +1,10 @@
 export const userColumns = [
-  { field: "studentId", headerName: "ID", width: 70 },
+  { field: "studentId", headerName: "ID", width: 70, headerAlign: "center", align: "center" },
   {
     field: "name",
     headerName: "UserName",
     width: 200,
+    headerAlign: "center", align: "center",
     renderCell: (params) => (
       <div className="cellWithImg">
         {/* <img
@@ -15,18 +16,21 @@ export const userColumns = [
       </div>
     ),
   },
-  { field: "email", headerName: "Email", width: 230 },
-  { field: "role", headerName: "Role", width: 120 },
-  { field: "createdAt", headerName: "Created At", width: 200 },
+  { field: "email", headerName: "Email", width: 230, headerAlign: "center", align: "center" },
+  { field: "role", headerName: "Role", width: 120, headerAlign: "center", align: "center" },
+  { field: "createdAt", headerName: "Created At", width: 200, headerAlign: "center", align: "center" },
 ];
 
 export const postColumns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "bookId", headerName: "Book ID", width: 200 },
-  { field: "title", headerName: "Title", width: 200 },
-  { field: "subject", headerName: "Subject", width: 200 },
-  { field: "available", headerName: "Available", width: 150, renderCell: (params) => (
-    <span>{params.row.available ? "Yes" : "No"}</span>
+  { field: "id", headerName: "ID", width: 70, headerAlign: "center", align: "center" },
+  { field: "bookId", headerName: "Book ID", width: 200, headerAlign: "center", align: "center" },
+  { field: "title", headerName: "Title", width: 200, headerAlign: "center", align: "center" },
+  { field: "subject", headerName: "Subject", width: 200, headerAlign: "center", align: "center" },
+  { field: "available", headerName: "Status", width: 150, headerAlign: "center", align: "center", renderCell: (params) => (
+    <span  style={{
+      color: params.row.available ? "green" : "orange",
+      fontWeight: "bold",
+    }}>{params.row.available ? "Available" : "Issued"}</span>
   ), },
   // { field: "bedroom", headerName: "Bedrooms", width: 100 },
   // { field: "bathroom", headerName: "Bathrooms", width: 100 },

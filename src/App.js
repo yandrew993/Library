@@ -11,9 +11,8 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { bookingColumns, postColumns, userColumns } from "./datatablesource";
 import NewHotel from "./components/newHotel/NewHotel";
-// import NewRoom from "./pages/newRoom/NewRoom";
 import SingleHouse from "./pages/singleHouse/SingleHouse";
-import Payment from "./pages/payments/Payment";
+//import Payment from "./pages/payments/Payment";
 import Profile from "./pages/profile/Profile";
 import Booking from "./pages/booking/Booking";
 import IssueBook from "./components/issueBook/IssueBook";
@@ -22,6 +21,7 @@ import ReturnBook from "./components/returnBook/ReturnBook";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
+  // ProtectedRoute component to restrict access to authenticated users
   const ProtectedRoute = ({ children }) => {
     const { user } = useContext(AuthContext);
 
@@ -36,7 +36,10 @@ function App() {
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
+          {/* Public Route */}
           <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes */}
           <Route
             path="/*"
             element={
@@ -59,7 +62,6 @@ function App() {
                   <Route path="bookings">
                     <Route index element={<List columns={bookingColumns} />} />
                     <Route path="search/:Id" element={<Booking />} />
-                    {/* <Route path="new" element={<NewRoom />} /> */}
                   </Route>
                   <Route path="issuebook">
                     <Route index element={<IssueBook />} />
