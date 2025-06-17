@@ -4,7 +4,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import apiRequest from "../../lib/apiRequest";
 import { DarkModeContext } from "../../context/darkModeContext";
-import "./newHotel.scss"; // You can rename this to newStudent.scss if needed
+import "./addStudent.scss"; // You can rename this to newStudent.scss if needed
 
 function AddStudent() {
   const [error, setError] = useState("");
