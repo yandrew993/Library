@@ -16,8 +16,8 @@ export const userColumns = [
       </div>
     ),
   },
-  { field: "email", headerName: "Email", width: 230, headerAlign: "center", align: "center" },
-  { field: "role", headerName: "Role", width: 120, headerAlign: "center", align: "center" },
+  // { field: "email", headerName: "Email", width: 230, headerAlign: "center", align: "center" },
+  // { field: "role", headerName: "Role", width: 120, headerAlign: "center", align: "center" },
   { field: "createdAt", headerName: "Created At", width: 200, headerAlign: "center", align: "center" },
 ];
 
